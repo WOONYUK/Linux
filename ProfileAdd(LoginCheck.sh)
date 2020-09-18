@@ -1,0 +1,20 @@
+#-----------------------------------------
+# Login Check
+#-----------------------------------------
+GRPS=(`/usr/bin/id -Gn`)
+#Login環境の確認(GDMからGNOMEへログインする場合)
+CHK_LOGIN="not a tty"
+CHK_TTY=`LANG=C /usr/bin/tty|sed -e "s/$CHK_LOGIN/1/g"`
+echo $CHK_TTY
+if [ $CHK_TTY != 1 ]; then
+for grpnum in ${GRPS[@]};do
+  case $grpnum in
+        loggrp)
+        /opt/inf/scripts/bin/loginchk.sh
+        #echo ok
+        exit
+        ;;
+        # append if neccesary
+ esac
+done
+fi
