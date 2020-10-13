@@ -14,6 +14,9 @@ SYSLOG_DIR='/var/log'
 
 logger -t $0 -i "START"
 
+# バックアップDIR作成
+cd ${BK_DIR}
+mkdir -p ${DATE_YEAR}/${DATE_MONTH}/${DATE_DAY}
 # バックアップDIR確認
 if [ ! -d "${BK_DIR}/${DATE_YEAR}/${DATE_MONTH}/${DATE_DAY}" ]; then
         logger -t $0 -i "BackupDIR is Not Found"
