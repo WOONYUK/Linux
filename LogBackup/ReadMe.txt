@@ -1,2 +1,2 @@
 1.事前に以下のコマンドでログの保存先を作成する。
->>mkdir /backup
+# mkdir /backup
